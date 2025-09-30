@@ -9,4 +9,9 @@
 import PaymentForm from './Components/PaymentForm.vue'
 import SelectPlan from './Components/SelectPlan.vue'
 </script>
-<style scoped></style>
+<style scoped>
+.container {
+  display: grid;
+  gap: 1rem;
+}
+</style>

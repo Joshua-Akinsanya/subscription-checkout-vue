@@ -5,12 +5,18 @@
   --color-white: #ece9fc;
   --color-white: #f0f3f6;
   --color-primary: #5425af;
+  --color-primary-w-opacity: #5425af26;
 }
 body {
   font-family: 'Be Vietnam Pro', sans-serif;
   color: var(--color-dark);
 }
 
+/* Reset Button, and fields */
+button,
+input {
+  border: none;
+}
 .heading {
   font-size: 1.5rem;
   font-weight: 600;
@@ -30,7 +36,6 @@ body {
 
 .extra-small-text {
   font-size: 0.75rem;
-  font-weight: 300;
 }
 
 .plan {
@@ -48,4 +53,49 @@ body {
 }
 .wt-400 {
   font-weight: 400;
+}
+
+.color-dark-grey {
+  color: var(--color-dark-grey);
+}
+
+.color-dark {
+  color: var(--color-dark);
+}
+
+.button,
+.option,
+.input-field {
+  border-radius: 0.6em;
+}
+
+.button {
+  font-weight: 600;
+  padding: 0.8em;
+}
+.bg-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+.bg-light-grey {
+  background-color: var(--color-light-grey);
+  color: var(--color-dark);
+}
+
+.option {
+  background-color: var(--color-white);
+  transition: background 0.25s ease;
+}
+.option:hover {
+  background-color: var(--color-primary-w-opacity);
+}
+
+.input-field {
+  border: solid 2px var(--color-light-grey);
+  padding: 1em;
+  flex-grow: 1;
+}
+.input-field::placeholder {
+  color: var(--color-dark);
+  font-weight: 500;
 }

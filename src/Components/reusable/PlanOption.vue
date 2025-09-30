@@ -2,8 +2,8 @@
   <div :class="classList" @click="emits('selected')">
     <input type="radio" name="" id="" />
     <div>
-      <p>{{ text }}</p>
-      <p>{{ pricetext }}</p>
+      <p class="wt-600">{{ text }}</p>
+      <p class="wt-500">{{ pricetext }}</p>
     </div>
   </div>
 </template>
@@ -27,8 +27,9 @@ const { text, pricetext, isselected } = props
 
 // Implemented this way because an extension (not sure which)
 // prevented me from writing 'selected': isselected in class
+// Still doesn't work tho :(
 const classList = computed<string[]>(() => {
-  const classArray: string[] = ['plan-option']
+  const classArray: string[] = ['option', 'plan-option']
   if (isselected && !classArray.includes('selected')) {
     classArray.push('selected')
   }
@@ -40,10 +41,7 @@ const classList = computed<string[]>(() => {
 .plan-option {
   display: flex;
   gap: 1em;
-  background-color: white;
-  border-radius: 0.5em;
   padding: 1em;
-  margin: 1em;
   align-items: center;
   cursor: pointer;
 }

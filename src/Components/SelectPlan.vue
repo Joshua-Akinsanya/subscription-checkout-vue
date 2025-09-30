@@ -1,23 +1,25 @@
 <template>
   <div class="container">
-    <h1>Starter Plan</h1>
+    <h1 class="heading">Starter Plan</h1>
 
-    <PlanOption
-      v-for="plan in plans"
-      :key="plan.text"
-      :text="plan.text"
-      :pricetext="plan.priceText"
-      :isselected="selectedPlan === plan"
-      return-object
-      @selected="handleSelect(plan)"
-    />
+    <div class="plan-option-container">
+      <PlanOption
+        v-for="plan in plans"
+        :key="plan.text"
+        :text="plan.text"
+        :pricetext="plan.priceText"
+        :isselected="selectedPlan === plan"
+        return-object
+        @selected="handleSelect(plan)"
+      />
+    </div>
 
     <div class="total big-text">
       <p>Total</p>
       <p>{{ totalPrice }}</p>
     </div>
 
-    <p class="extra-small-text">
+    <p class="extra-small-text color-dark-grey">
       This environment is for demonstration purposes only. Please refrain from entering any actual
       sensitive data.
     </p>
@@ -35,7 +37,8 @@ interface Plan {
 }
 
 const totalPrice = computed(() => {
-  return true
+  const price = selectedPlan.value?.pricePerMonth
+  return `$${price} / month`
 })
 
 const plans = ref<Plan[]>([
@@ -43,7 +46,7 @@ const plans = ref<Plan[]>([
   { text: 'Pay Annual', priceText: '$16/Month/Member', pricePerMonth: 16 },
 ])
 
-const selectedPlan = ref<Plan | null>(null)
+const selectedPlan = ref<Plan | null>(plans.value[0] ?? null)
 
 function handleSelect(plan: Plan): void {
   selectedPlan.value = plan
@@ -54,6 +57,12 @@ function handleSelect(plan: Plan): void {
 .container {
   background-color: #d2d5da;
   border-radius: 0.5em;
+  padding: 1em;
+}
+
+.plan-option-container {
+  display: grid;
+  gap: 1em;
 }
 
 .total {
