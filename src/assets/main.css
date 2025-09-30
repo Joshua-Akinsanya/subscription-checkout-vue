@@ -2,11 +2,33 @@
   --color-dark: #121826;
   --color-dark-grey: #4d5562;
   --color-light-grey: #d2d5da;
-  --color-white: #ece9fc;
-  --color-white: #f0f3f6;
+  --color-white-ec: #ece9fc;
+  --color-white-f0: #f0f3f6;
+  --color-white: #ffffff;
   --color-primary: #5425af;
   --color-primary-w-opacity: #5425af26;
+
+  --sm-screen-side-margin: 1em;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+body {
+  margin: 0;
+}
+
 body {
   font-family: 'Be Vietnam Pro', sans-serif;
   color: var(--color-dark);
@@ -17,6 +39,16 @@ button,
 input {
   border: none;
 }
+.mt-12 {
+  margin-top: 0.75em;
+}
+.mb-16 {
+  margin-bottom: 1em;
+}
+.mb-32 {
+  margin-bottom: 2em;
+}
+
 .heading {
   font-size: 1.5rem;
   font-weight: 600;
@@ -42,7 +74,7 @@ input {
 }
 .selected {
   background-color: var(--color-dark-grey);
-  border: solid 1px var(--color-primary);
+  border: solid 2px var(--color-primary);
 }
 
 .wt-600 {
@@ -66,12 +98,12 @@ input {
 .button,
 .option,
 .input-field {
-  border-radius: 0.6em;
+  border-radius: 0.75em;
 }
 
 .button {
   font-weight: 600;
-  padding: 0.8em;
+  padding: 1em;
 }
 .bg-primary {
   background-color: var(--color-primary);
@@ -96,6 +128,6 @@ input {
   flex-grow: 1;
 }
 .input-field::placeholder {
-  color: var(--color-dark);
+  color: var(--color-dark-grey);
   font-weight: 500;
 }

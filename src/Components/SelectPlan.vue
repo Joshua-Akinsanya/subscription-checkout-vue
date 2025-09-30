@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
-    <h1 class="heading">Starter Plan</h1>
-
+  <div class="plan-container">
     <div class="plan-option-container">
+      <h1 class="heading local-heading">Starter Plan</h1>
+
       <PlanOption
         v-for="plan in plans"
         :key="plan.text"
@@ -14,15 +14,16 @@
       />
     </div>
 
-    <div class="total big-text">
-      <p>Total</p>
-      <p>{{ totalPrice }}</p>
+    <div class="lower-container">
+      <div class="total heading">
+        <p>Total</p>
+        <p>{{ totalPrice }}</p>
+      </div>
+      <p class="extra-small-text color-dark-grey">
+        This environment is for demonstration purposes only. Please refrain from entering any actual
+        sensitive data.
+      </p>
     </div>
-
-    <p class="extra-small-text color-dark-grey">
-      This environment is for demonstration purposes only. Please refrain from entering any actual
-      sensitive data.
-    </p>
   </div>
 </template>
 
@@ -54,17 +55,25 @@ function handleSelect(plan: Plan): void {
 </script>
 
 <style scoped>
-.container {
-  background-color: #d2d5da;
-  border-radius: 0.5em;
-  padding: 1em;
+.plan-container {
+  margin: 1em var(--sm-screen-side-margin) 0;
+  background-color: var(--color-white-ec);
+  border-radius: 0.75em;
+  padding: 2em;
 }
 
 .plan-option-container {
   display: grid;
-  gap: 1em;
+  gap: 0.75em;
+  padding-bottom: 2em;
+  border-bottom: solid 2px var(--color-light-grey);
 }
 
+.lower-container {
+  margin-top: 2em;
+  display: grid;
+  gap: 1em;
+}
 .total {
   display: flex;
   justify-content: space-between;

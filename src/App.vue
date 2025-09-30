@@ -12,6 +12,6 @@ import SelectPlan from './Components/SelectPlan.vue'
 <style scoped>
 .container {
   display: grid;
-  gap: 1rem;
+  gap: 4rem;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <div :class="classList" @click="emits('selected')">
+  <div class="option plan-option" :class="isselected ? 'selected' : ''" @click="emits('selected')">
     <input type="radio" name="" id="" />
-    <div>
+    <div class="plan-option-texts">
       <p class="wt-600">{{ text }}</p>
       <p class="wt-500">{{ pricetext }}</p>
     </div>
@@ -9,8 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-
 interface Props {
   text: string
   pricetext: string
@@ -28,21 +26,16 @@ const { text, pricetext, isselected } = props
 // Implemented this way because an extension (not sure which)
 // prevented me from writing 'selected': isselected in class
 // Still doesn't work tho :(
-const classList = computed<string[]>(() => {
-  const classArray: string[] = ['option', 'plan-option']
-  if (isselected && !classArray.includes('selected')) {
-    classArray.push('selected')
-  }
-  return classArray
-})
 </script>
 
 <style scoped>
 .plan-option {
   display: flex;
-  gap: 1em;
-  padding: 1em;
-  align-items: center;
-  cursor: pointer;
+  gap: 1.5em;
+  padding: 1em 1em;
+}
+.plan-option-texts {
+  display: grid;
+  gap: 0.75em;
 }
 </style>
