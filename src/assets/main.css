@@ -1,0 +1,51 @@
+:root {
+  --color-dark: #121826;
+  --color-dark-grey: #4d5562;
+  --color-light-grey: #d2d5da;
+  --color-white: #ece9fc;
+  --color-white: #f0f3f6;
+  --color-primary: #5425af;
+}
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: var(--color-dark);
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.big-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Body text 1rem by default */
+
+.small-text {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.extra-small-text {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.plan {
+}
+.selected {
+  background-color: var(--color-dark-grey);
+  border: solid 1px var(--color-primary);
+}
+
+.wt-600 {
+  font-weight: 600;
+}
+.wt-500 {
+  font-weight: 500;
+}
+.wt-400 {
+  font-weight: 400;
+}

@@ -63,7 +63,7 @@ Run type checking:
 vue-tsc --noEmit
 ```
 
----
+---Joshua-Akinsanya/Subscription-checkout-vue
 
 ## Development Commands
 

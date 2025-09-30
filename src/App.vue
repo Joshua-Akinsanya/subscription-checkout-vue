@@ -1,7 +1,12 @@
 <template>
-  <div>Hello Vue 3</div>
+  <div class="container">
+    <SelectPlan />
+    <PaymentForm />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
-
-<style lang="scss" scoped></style>
+<script setup lang="ts">
+import PaymentForm from './Components/PaymentForm.vue'
+import SelectPlan from './Components/SelectPlan.vue'
+</script>
+<style scoped></style>
