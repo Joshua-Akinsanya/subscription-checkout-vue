@@ -25,7 +25,8 @@ h5,
 h6,
 p,
 input,
-body {
+body,
+img {
   margin: 0;
 }
 
@@ -39,8 +40,21 @@ button,
 input {
   border: none;
 }
+
+.ma-32 {
+  margin: 2em;
+}
 .mt-12 {
   margin-top: 0.75em;
+}
+.mt-16 {
+  margin-top: 1em;
+}
+.mt-32 {
+  margin-top: 2em;
+}
+.mb-12 {
+  margin-bottom: 0.75em;
 }
 .mb-16 {
   margin-bottom: 1em;
@@ -53,28 +67,17 @@ input {
   font-size: 1.5rem;
   font-weight: 600;
 }
-
 .big-text {
   font-size: 1.25rem;
   font-weight: 600;
 }
-
 /* Body text 1rem by default */
-
 .small-text {
   font-size: 0.875rem;
   font-weight: 400;
 }
-
 .extra-small-text {
   font-size: 0.75rem;
-}
-
-.plan {
-}
-.selected {
-  background-color: var(--color-dark-grey);
-  border: solid 2px var(--color-primary);
 }
 
 .wt-600 {
@@ -90,9 +93,27 @@ input {
 .color-dark-grey {
   color: var(--color-dark-grey);
 }
-
 .color-dark {
   color: var(--color-dark);
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+.display-grid {
+  display: grid;
+}
+.center-block {
+  place-content: center;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.selected {
+  background-color: var(--color-dark-grey);
+  border: solid 2px var(--color-primary);
 }
 
 .button,
@@ -103,7 +124,7 @@ input {
 
 .button {
   font-weight: 600;
-  padding: 1em;
+  padding: 1em 2em;
 }
 .bg-primary {
   background-color: var(--color-primary);
@@ -123,11 +144,17 @@ input {
 }
 
 .input-field {
+  display: block;
   border: solid 2px var(--color-light-grey);
   padding: 1em;
-  flex-grow: 1;
 }
 .input-field::placeholder {
   color: var(--color-dark-grey);
   font-weight: 500;
+}
+
+@media (max-width: 63.99rem) {
+  .hide-on-sm {
+    display: none !important;
+  }
 }

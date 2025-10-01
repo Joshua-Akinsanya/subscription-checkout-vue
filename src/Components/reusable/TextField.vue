@@ -1,5 +1,5 @@
 <template>
-  <div class="field-container mb-16">
+  <div class="display-grid mb-16 flex-grow">
     <label class="color-dark-grey small-text wt-600" for="">{{ label }}</label>
     <input type="text" :placeholder="placeholder" class="input-field mt-12" />
   </div>
@@ -16,8 +16,4 @@ const props = defineProps<Props>()
 const { label, placeholder } = props
 </script>
 
-<style scoped>
-.field-container {
-  display: grid;
-}
-</style>
+<style scoped></style>

@@ -1,28 +1,36 @@
 <template>
   <div class="plan-container">
-    <div class="plan-option-container">
-      <h1 class="heading local-heading">Starter Plan</h1>
-
-      <PlanOption
-        v-for="plan in plans"
-        :key="plan.text"
-        :text="plan.text"
-        :pricetext="plan.priceText"
-        :isselected="selectedPlan === plan"
-        return-object
-        @selected="handleSelect(plan)"
-      />
+    <div class="ma-32">
+      <div class="plan-option-container">
+        <h1 class="heading local-heading">Starter Plan</h1>
+        <PlanOption
+          v-for="plan in plans"
+          :key="plan.text"
+          :text="plan.text"
+          :pricetext="plan.priceText"
+          :isselected="selectedPlan === plan"
+          return-object
+          @selected="handleSelect(plan)"
+        />
+      </div>
+      <div class="lower-container">
+        <div class="total heading">
+          <p>Total</p>
+          <p>{{ totalPrice }}</p>
+        </div>
+        <p class="extra-small-text color-dark-grey">
+          This environment is for demonstration purposes only. Please refrain from entering any
+          actual sensitive data.
+        </p>
+      </div>
     </div>
 
-    <div class="lower-container">
-      <div class="total heading">
-        <p>Total</p>
-        <p>{{ totalPrice }}</p>
-      </div>
-      <p class="extra-small-text color-dark-grey">
-        This environment is for demonstration purposes only. Please refrain from entering any actual
-        sensitive data.
-      </p>
+    <div class="img-container">
+      <img
+        src="../assets/images/Checkout-background.png"
+        alt="rainbow cube"
+        class="hide-on-sm bottom-img"
+      />
     </div>
   </div>
 </template>
@@ -59,7 +67,7 @@ function handleSelect(plan: Plan): void {
   margin: 1em var(--sm-screen-side-margin) 0;
   background-color: var(--color-white-ec);
   border-radius: 0.75em;
-  padding: 2em;
+  overflow: hidden;
 }
 
 .plan-option-container {
@@ -77,5 +85,27 @@ function handleSelect(plan: Plan): void {
 .total {
   display: flex;
   justify-content: space-between;
+}
+
+.bottom-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media (min-width: 64rem) {
+  .plan-container {
+    margin-bottom: 1.25em;
+    /* Other component flex will be set to 5
+    to ensure it grows slightly more than this component */
+    flex: 3 1 0;
+  }
+
+  .img-container {
+    position: relative; /* Added to position image properly*/
+    width: 100%;
+    height: 100%;
+    min-height: 18rem; /* based on img height */
+  }
 }
 </style>
